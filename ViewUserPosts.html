@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Find posts</title>
+    <?php 
+      $mysqli = new mysqli("mysql.eecs.ku.edu", "abdouldiallo", "LAB10eecs44820", "abdouldiallo");
+
+      if($mysqli->connect_errno){
+      printf("Connect failed: %s\n", $mysql->connect_errno);
+      exit();
+      }else {
+      printf("Connection successful");
+      }
+    ?>
+  </head>
+  <body>
+    <h2>Find a user's posts</h2>
+    <form name="viewPosts"action="./ViewUserPosts.php" method="post">
+      <label for="users">Choose a user:</label>
+      <select id="users" name="users">
+        <?php 
+          $sql = "SELECT * FROM Users";
+          $checkQuery = $mysqli->prepare($sql);
+          //$checkQuery->bind_param("s", $userId);
+          $checkQuery->execute();
+          $resultCheck = $checkQuery->get_result();
+
+          while($users = $resultCheck->fetch_assoc()){
+            echo "<option value=" .$users['user_id']. ">" .$users['user_id']. "</option>";
+          }
+        ?>
+       
+      </select>
+      <input type="submit">
+    </form>
+
+  </body>
+</html>

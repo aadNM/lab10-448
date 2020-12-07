@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Publish Posts</title>
+  </head>
+  <body>
+    <h2>Publish a post</h2>
+    <form name="postCreation"action="./CreatePosts.php" method="post">
+    <p>Username: <input type="text" name="userName" value="" id="userName"><br>
+      Comments:<br> <textarea id="post-content" name="post-content" rows="6" cols="70"></textarea></p>
+    <button type="submit" onClick="return validateForm()">Submit</button>
+    </form>
+    <script type="text/javascript">
+      function validateForm(){
+       /* var user = document.querySelector("#userName").value;
+        var post = document.querySelector("#post-content").value;
+        if(user == "" || post == "" ){
+          alert("Please, put a value for all fields.");
+          return false;
+        }*/
+        return true;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Add User</title>
+    <!--<script type="text/javascript" src="formChecker.js"></script>-->
+    <!--<link rel="stylesheet" type="text/css" href="styleStore.css">-->
+  </head>
+  <body>
+    <h2>Create user profile</h2>
+    <form name="myForm" action="./CreateUser.php" method="post">
+    <p>Username: <input type="text" name="userName" value="" id="userName"></p>
+    <button type="submit" onClick="return validateForm()">Checkout</button>
+    </form>
+   <script type="text/javascript">
+      function validateForm(){
+       /* var nUser = document.querySelector("#userName").value;
+        if(nUser == "" ){
+          alert("Please, put a value for the field.");
+          return false;
+        }*/
+        return true;
+      }
+    </script>
+  </body>
+</html>
